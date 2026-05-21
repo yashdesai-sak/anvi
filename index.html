@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy 1 Year ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f0f0f,#1f1f1f);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* HERO */
+
+.hero{
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    text-align:center;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:70px;
+    margin-bottom:20px;
+
+    animation:fadeDown 1.5s ease;
+}
+
+.hero p{
+    max-width:700px;
+    line-height:1.8;
+    font-size:22px;
+
+    animation:fadeUp 2s ease;
+}
+
+.btn{
+    margin-top:30px;
+
+    padding:15px 35px;
+
+    border:none;
+    border-radius:50px;
+
+    background:#ff4d6d;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:0.4s;
+}
+
+.btn:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 20px #ff4d6d;
+}
+
+/* SECTIONS */
+
+section{
+    padding:100px 20px;
+    text-align:center;
+}
+
+h2{
+    font-size:50px;
+    margin-bottom:50px;
+}
+
+/* LOVE NOTE */
+
+.note-box{
+    max-width:700px;
+
+    margin:auto;
+
+    background:#1f1f1f;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    font-size:26px;
+
+    box-shadow:0 0 20px rgba(255,77,109,0.3);
+
+    min-height:150px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* LOVE METER */
+
+.meter{
+    width:280px;
+    height:280px;
+
+    border-radius:50%;
+
+    margin:40px auto;
+
+    background:
+    conic-gradient(
+    #ff4d6d 0deg,
+    #222 0deg
+    );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    transition:0.3s;
+
+    box-shadow:0 0 30px rgba(255,77,109,0.4);
+}
+
+.inner{
+    width:210px;
+    height:210px;
+
+    border-radius:50%;
+
+    background:#111;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    font-size:45px;
+    font-weight:bold;
+}
+
+/* OPEN LETTERS */
+
+.letters{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.letter-btn{
+    padding:18px 30px;
+
+    border:none;
+    border-radius:20px;
+
+    background:#ff4d6d;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:0.4s;
+}
+
+.letter-btn:hover{
+    transform:translateY(-5px);
+}
+
+.letter-box{
+    max-width:700px;
+
+    margin:40px auto;
+
+    background:#1f1f1f;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    line-height:1.8;
+
+    font-size:22px;
+
+    display:none;
+}
+
+/* FINAL */
+
+.final{
+    min-height:70vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+.final p{
+    max-width:700px;
+
+    line-height:1.8;
+
+    font-size:24px;
+}
+
+/* FLOATING HEARTS */
+
+.heart{
+    position:fixed;
+
+    width:20px;
+    height:20px;
+
+    background:#ff4d6d;
+
+    transform:rotate(45deg);
+
+    opacity:0.5;
+
+    animation:float 8s linear infinite;
+
+    z-index:-1;
+}
+
+.heart::before,
+.heart::after{
+    content:'';
+
+    width:20px;
+    height:20px;
+
+    background:#ff4d6d;
+
+    border-radius:50%;
+
+    position:absolute;
+}
+
+.heart::before{
+    top:-10px;
+    left:0;
+}
+
+.heart::after{
+    left:-10px;
+    top:0;
+}
+
+@keyframes float{
+
+0%{
+    transform:translateY(100vh) rotate(45deg);
+}
+
+100%{
+    transform:translateY(-120vh) rotate(45deg);
+}
+
+}
+
+@keyframes fadeDown{
+
+from{
+    opacity:0;
+    transform:translateY(-50px);
+}
+
+to{
+    opacity:1;
+    transform:translateY(0);
+}
+
+}
+
+@keyframes fadeUp{
+
+from{
+    opacity:0;
+    transform:translateY(50px);
+}
+
+to{
+    opacity:1;
+    transform:translateY(0);
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:45px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+h2{
+    font-size:35px;
+}
+
+.note-box,
+.letter-box{
+    font-size:20px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>Happy 1 Year ❤️</h1>
+
+<p>
+365 days of love, chaos, laughter,
+late-night talks and beautiful memories ✨
+</p>
+
+<button class="btn" onclick="scrollToLove()">
+
+Start Our Story 💖
+
+</button>
+
+</section>
+
+<!-- LOVE NOTES -->
+
+<section id="love">
+
+<h2>Reasons I Love You ❤️</h2>
+
+<div class="note-box" id="note">
+
+Click below for a surprise 💌
+
+</div>
+
+<button class="btn" onclick="showLove()">
+
+Reveal Love ✨
+
+</button>
+
+</section>
+
+<!-- LOVE METER -->
+
+<section>
+
+<h2>Love Meter 💘</h2>
+
+<div class="meter" id="meter">
+
+<div class="inner">
+
+<div id="percent">0%</div>
+
+<small>Compatibility</small>
+
+</div>
+
+</div>
+
+<button class="btn" onclick="startMeter()">
+
+Check Our Love ❤️
+
+</button>
+
+</section>
+
+<!-- OPEN WHEN LETTERS -->
+
+<section>
+
+<h2>Open When... 💌</h2>
+
+<div class="letters">
+
+<button class="letter-btn"
+onclick="openLetter('sad')">
+
+Open When Sad 🌙
+
+</button>
+
+<button class="letter-btn"
+onclick="openLetter('miss')">
+
+Open When You Miss Me ❤️
+
+</button>
+
+<button class="letter-btn"
+onclick="openLetter('happy')">
+
+Open When Happy ✨
+
+</button>
+
+</div>
+
+<div class="letter-box" id="letterBox">
+
+Letter appears here ❤️
+
+</div>
+
+</section>
+
+<!-- FINAL -->
+
+<section class="final">
+
+<h2>Forever With You 🌙</h2>
+
+<p>
+Thank you for making my life beautiful.
+No matter what happens,
+I’ll always choose you ❤️
+</p>
+
+</section>
+
+<script>
+
+/* FLOATING HEARTS */
+
+for(let i=0;i<25;i++){
+
+let heart=document.createElement('div');
+
+heart.classList.add('heart');
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=
+(Math.random()*5+5)+"s";
+
+document.body.appendChild(heart);
+
+}
+
+/* SCROLL */
+
+function scrollToLove(){
+
+document
+.getElementById("love")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+/* LOVE NOTES */
+
+const messages=[
+
+"You are my favorite person ❤️",
+
+"You make every day beautiful ✨",
+
+"I still get butterflies 🦋",
+
+"You are my safe place 🌙",
+
+"You are my peace 💖",
+
+"I love your smile ❤️",
+
+"You make my life complete ✨"
+
+];
+
+function showLove(){
+
+let random=
+messages[Math.floor(Math.random()*messages.length)];
+
+document
+.getElementById("note")
+.innerHTML=random;
+
+}
+
+/* LOVE METER */
+
+function startMeter(){
+
+let percent=
+document.getElementById("percent");
+
+let meter=
+document.getElementById("meter");
+
+let value=0;
+
+let finalValue=
+Math.floor(Math.random()*10)+91;
+
+let interval=setInterval(function(){
+
+value++;
+
+percent.innerHTML=value+"%";
+
+let degree=value*3.6;
+
+meter.style.background=
+"conic-gradient(#ff4d6d "+degree+"deg, #222 "+degree+"deg)";
+
+if(value>=finalValue){
+
+clearInterval(interval);
+
+}
+
+},25);
+
+}
+
+/* LETTERS */
+
+function openLetter(type){
+
+let text="";
+
+if(type==="sad"){
+
+text=
+"Whenever you're sad, remember that you never have to face anything alone. I'll always be here for you ❤️";
+
+}
+
+if(type==="miss"){
+
+text=
+"If you're missing me right now, just know I'm probably missing you even more ❤️";
+
+}
+
+if(type==="happy"){
+
+text=
+"Seeing you happy is honestly one of my favorite things in the world ✨";
+
+}
+
+let box=
+document.getElementById("letterBox");
+
+box.style.display="block";
+
+box.innerHTML=text;
+
+}
+
+</script>
+
+</body>
+</html>
