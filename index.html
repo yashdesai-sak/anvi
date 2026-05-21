@@ -11,293 +11,375 @@
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-    background:linear-gradient(135deg,#0f0f0f,#1f1f1f);
-    color:white;
-    overflow-x:hidden;
+background:linear-gradient(135deg,#0f0f0f,#1a1a1a);
+color:white;
+overflow-x:hidden;
+}
+
+/* INTRO */
+
+.intro{
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:100vh;
+
+background:#0f0f0f;
+
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+
+z-index:9999;
+
+text-align:center;
+padding:20px;
+}
+
+.intro h1{
+font-size:65px;
+margin-bottom:20px;
+}
+
+.intro p{
+font-size:22px;
+margin-bottom:30px;
+}
+
+/* BUTTON */
+
+.btn{
+padding:15px 35px;
+
+border:none;
+border-radius:50px;
+
+background:#ff4d6d;
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+transition:0.4s;
+}
+
+.btn:hover{
+transform:scale(1.08);
+box-shadow:0 0 25px #ff4d6d;
+}
+
+/* MAIN */
+
+.main{
+display:none;
+animation:fadeIn 2s ease;
 }
 
 /* HERO */
 
 .hero{
-    height:100vh;
+min-height:100vh;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
 
-    text-align:center;
-    padding:20px;
+text-align:center;
+padding:20px;
+}
+
+.hero img{
+width:300px;
+height:300px;
+
+object-fit:cover;
+
+border-radius:50%;
+
+border:5px solid #ff4d6d;
+
+margin-bottom:30px;
+
+box-shadow:0 0 30px rgba(255,77,109,0.5);
+
+display:none;
+
+animation:popUp 1.5s ease forwards;
 }
 
 .hero h1{
-    font-size:70px;
-    margin-bottom:20px;
-
-    animation:fadeDown 1.5s ease;
+font-size:65px;
+margin-bottom:20px;
 }
 
 .hero p{
-    max-width:700px;
-    line-height:1.8;
-    font-size:22px;
-
-    animation:fadeUp 2s ease;
+max-width:700px;
+font-size:22px;
+line-height:1.8;
 }
 
-.btn{
-    margin-top:30px;
+/* LETTER */
 
-    padding:15px 35px;
-
-    border:none;
-    border-radius:50px;
-
-    background:#ff4d6d;
-
-    color:white;
-
-    font-size:18px;
-
-    cursor:pointer;
-
-    transition:0.4s;
+.letter-section{
+padding:100px 20px;
+text-align:center;
 }
 
-.btn:hover{
-    transform:scale(1.08);
-    box-shadow:0 0 20px #ff4d6d;
+.envelope{
+width:220px;
+height:150px;
+
+background:#ff4d6d;
+
+margin:40px auto;
+
+position:relative;
+
+cursor:pointer;
+
+border-radius:10px;
+
+transition:0.5s;
 }
 
-/* SECTIONS */
-
-section{
-    padding:100px 20px;
-    text-align:center;
+.envelope:hover{
+transform:scale(1.05);
 }
 
-h2{
-    font-size:50px;
-    margin-bottom:50px;
+.envelope::before{
+content:'';
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:0;
+height:0;
+
+border-left:110px solid transparent;
+border-right:110px solid transparent;
+border-top:80px solid #ff758f;
 }
 
-/* LOVE NOTE */
+.letter{
+max-width:800px;
+
+margin:40px auto;
+
+background:#1f1f1f;
+
+padding:50px;
+
+border-radius:30px;
+
+line-height:2;
+
+font-size:22px;
+
+display:none;
+
+animation:fadeIn 2s ease;
+}
+
+/* NOTES */
 
 .note-box{
-    max-width:700px;
+max-width:700px;
 
-    margin:auto;
+margin:40px auto;
 
-    background:#1f1f1f;
+background:#1f1f1f;
 
-    padding:40px;
+padding:40px;
 
-    border-radius:25px;
+border-radius:25px;
 
-    font-size:26px;
+font-size:26px;
 
-    box-shadow:0 0 20px rgba(255,77,109,0.3);
+min-height:150px;
 
-    min-height:150px;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
+display:flex;
+justify-content:center;
+align-items:center;
 }
 
 /* LOVE METER */
 
+.meter-section{
+padding:100px 20px;
+text-align:center;
+}
+
 .meter{
-    width:280px;
-    height:280px;
+width:280px;
+height:280px;
 
-    border-radius:50%;
+border-radius:50%;
 
-    margin:40px auto;
+margin:40px auto;
 
-    background:
-    conic-gradient(
-    #ff4d6d 0deg,
-    #222 0deg
-    );
+background:
+conic-gradient(
+#ff4d6d 0deg,
+#222 0deg
+);
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+display:flex;
+justify-content:center;
+align-items:center;
 
-    transition:0.3s;
-
-    box-shadow:0 0 30px rgba(255,77,109,0.4);
+box-shadow:0 0 30px rgba(255,77,109,0.4);
 }
 
 .inner{
-    width:210px;
-    height:210px;
+width:210px;
+height:210px;
 
-    border-radius:50%;
+border-radius:50%;
 
-    background:#111;
+background:#111;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
 
-    font-size:45px;
-    font-weight:bold;
-}
-
-/* OPEN LETTERS */
-
-.letters{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:20px;
-}
-
-.letter-btn{
-    padding:18px 30px;
-
-    border:none;
-    border-radius:20px;
-
-    background:#ff4d6d;
-
-    color:white;
-
-    cursor:pointer;
-
-    transition:0.4s;
-}
-
-.letter-btn:hover{
-    transform:translateY(-5px);
-}
-
-.letter-box{
-    max-width:700px;
-
-    margin:40px auto;
-
-    background:#1f1f1f;
-
-    padding:40px;
-
-    border-radius:25px;
-
-    line-height:1.8;
-
-    font-size:22px;
-
-    display:none;
+font-size:45px;
+font-weight:bold;
 }
 
 /* FINAL */
 
 .final{
-    min-height:70vh;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
+padding:100px 20px;
+text-align:center;
 }
 
 .final p{
-    max-width:700px;
-
-    line-height:1.8;
-
-    font-size:24px;
+max-width:700px;
+margin:auto;
+line-height:1.8;
+font-size:24px;
 }
 
-/* FLOATING HEARTS */
+/* HEARTS */
 
 .heart{
-    position:fixed;
+position:fixed;
 
-    width:20px;
-    height:20px;
+width:20px;
+height:20px;
 
-    background:#ff4d6d;
+background:#ff4d6d;
 
-    transform:rotate(45deg);
+transform:rotate(45deg);
 
-    opacity:0.5;
+opacity:0.5;
 
-    animation:float 8s linear infinite;
+animation:float 8s linear infinite;
 
-    z-index:-1;
+z-index:-1;
 }
 
 .heart::before,
 .heart::after{
-    content:'';
+content:'';
 
-    width:20px;
-    height:20px;
+width:20px;
+height:20px;
 
-    background:#ff4d6d;
+background:#ff4d6d;
 
-    border-radius:50%;
+border-radius:50%;
 
-    position:absolute;
+position:absolute;
 }
 
 .heart::before{
-    top:-10px;
-    left:0;
+top:-10px;
+left:0;
 }
 
 .heart::after{
-    left:-10px;
-    top:0;
+left:-10px;
+top:0;
 }
+
+/* CLICK HEARTS */
+
+.click-heart{
+position:fixed;
+
+font-size:24px;
+
+animation:heartPop 1s linear forwards;
+
+pointer-events:none;
+}
+
+/* ANIMATIONS */
 
 @keyframes float{
 
 0%{
-    transform:translateY(100vh) rotate(45deg);
+transform:translateY(100vh) rotate(45deg);
 }
 
 100%{
-    transform:translateY(-120vh) rotate(45deg);
+transform:translateY(-120vh) rotate(45deg);
 }
 
 }
 
-@keyframes fadeDown{
+@keyframes fadeIn{
 
 from{
-    opacity:0;
-    transform:translateY(-50px);
+opacity:0;
 }
 
 to{
-    opacity:1;
-    transform:translateY(0);
+opacity:1;
 }
 
 }
 
-@keyframes fadeUp{
+@keyframes popUp{
 
-from{
-    opacity:0;
-    transform:translateY(50px);
+0%{
+transform:scale(0);
+opacity:0;
 }
 
-to{
-    opacity:1;
-    transform:translateY(0);
+100%{
+transform:scale(1);
+opacity:1;
+}
+
+}
+
+@keyframes heartPop{
+
+0%{
+opacity:1;
+transform:translateY(0) scale(1);
+}
+
+100%{
+opacity:0;
+transform:translateY(-100px) scale(2);
 }
 
 }
@@ -306,21 +388,20 @@ to{
 
 @media(max-width:768px){
 
+.intro h1,
 .hero h1{
-    font-size:45px;
+font-size:40px;
 }
 
-.hero p{
-    font-size:18px;
+.hero img{
+width:220px;
+height:220px;
 }
 
-h2{
-    font-size:35px;
-}
-
-.note-box,
-.letter-box{
-    font-size:20px;
+.hero p,
+.letter,
+.final p{
+font-size:18px;
 }
 
 }
@@ -330,50 +411,126 @@ h2{
 
 <body>
 
-<!-- HERO -->
+<!-- INTRO -->
 
-<section class="hero">
+<div class="intro" id="intro">
 
 <h1>Happy 1 Year ❤️</h1>
 
 <p>
-365 days of love, chaos, laughter,
-late-night talks and beautiful memories ✨
+I made something special for you ✨
 </p>
 
-<button class="btn" onclick="scrollToLove()">
+<button class="btn" onclick="openWebsite(event)">
 
-Start Our Story 💖
+Open Your Surprise 💌
 
 </button>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="main" id="main">
+
+<!-- HERO -->
+
+<section class="hero">
+
+<img src="love.jpg" id="lovePhoto">
+
+<h1>365 Days With You ❤️</h1>
+
+<p>
+Thank you for being the best part of my life ✨
+</p>
+
+</section>
+
+<!-- LETTER -->
+
+<section class="letter-section">
+
+<h1 style="font-size:50px;">
+
+Open Your Letter 💌
+
+</h1>
+
+<div class="envelope"
+onclick="openLetter(event)">
+
+</div>
+
+<div class="letter" id="letter">
+
+My Love,
+
+<br><br>
+
+This year with you has honestly been the most beautiful part of my life.
+
+Every laugh,
+every late-night conversation,
+every little memory,
+every moment with you —
+means everything to me.
+
+You make my life happier,
+warmer,
+and brighter just by existing.
+
+Thank you for loving me,
+supporting me,
+and being my favorite person.
+
+No matter where life takes us,
+I’ll always choose you ❤️
+
+Forever yours ✨
+
+</div>
 
 </section>
 
 <!-- LOVE NOTES -->
 
-<section id="love">
+<section>
 
-<h2>Reasons I Love You ❤️</h2>
+<h1 style="font-size:50px;text-align:center;">
+
+Reasons I Love You ❤️
+
+</h1>
 
 <div class="note-box" id="note">
 
-Click below for a surprise 💌
+Click below for a surprise ✨
 
 </div>
 
-<button class="btn" onclick="showLove()">
+<div style="text-align:center;">
 
-Reveal Love ✨
+<button class="btn"
+onclick="showLove(event)">
+
+Reveal Love 💖
 
 </button>
+
+</div>
 
 </section>
 
 <!-- LOVE METER -->
 
-<section>
+<section class="meter-section">
 
-<h2>Love Meter 💘</h2>
+<h1 style="font-size:50px;">
+
+Love Meter 💘
+
+</h1>
 
 <div class="meter" id="meter">
 
@@ -387,7 +544,8 @@ Reveal Love ✨
 
 </div>
 
-<button class="btn" onclick="startMeter()">
+<button class="btn"
+onclick="startMeter(event)">
 
 Check Our Love ❤️
 
@@ -395,87 +553,51 @@ Check Our Love ❤️
 
 </section>
 
-<!-- OPEN WHEN LETTERS -->
-
-<section>
-
-<h2>Open When... 💌</h2>
-
-<div class="letters">
-
-<button class="letter-btn"
-onclick="openLetter('sad')">
-
-Open When Sad 🌙
-
-</button>
-
-<button class="letter-btn"
-onclick="openLetter('miss')">
-
-Open When You Miss Me ❤️
-
-</button>
-
-<button class="letter-btn"
-onclick="openLetter('happy')">
-
-Open When Happy ✨
-
-</button>
-
-</div>
-
-<div class="letter-box" id="letterBox">
-
-Letter appears here ❤️
-
-</div>
-
-</section>
-
 <!-- FINAL -->
 
 <section class="final">
 
-<h2>Forever With You 🌙</h2>
+<h1 style="font-size:50px;margin-bottom:30px;">
+
+Forever With You 🌙
+
+</h1>
 
 <p>
-Thank you for making my life beautiful.
-No matter what happens,
-I’ll always choose you ❤️
+
+Thank you for every smile,
+every memory,
+and every beautiful moment together ❤️
+
 </p>
 
 </section>
 
+</div>
+
 <script>
 
-/* FLOATING HEARTS */
+/* OPEN WEBSITE */
 
-for(let i=0;i<25;i++){
+function openWebsite(event){
 
-let heart=document.createElement('div');
+document.getElementById("intro").style.display="none";
 
-heart.classList.add('heart');
+document.getElementById("main").style.display="block";
 
-heart.style.left=Math.random()*100+"vw";
+document.getElementById("lovePhoto").style.display="block";
 
-heart.style.animationDuration=
-(Math.random()*5+5)+"s";
-
-document.body.appendChild(heart);
+createHearts(event);
 
 }
 
-/* SCROLL */
+/* OPEN LETTER */
 
-function scrollToLove(){
+function openLetter(event){
 
-document
-.getElementById("love")
-.scrollIntoView({
-behavior:"smooth"
-});
+document.getElementById("letter").style.display="block";
+
+createHearts(event);
 
 }
 
@@ -489,17 +611,17 @@ const messages=[
 
 "I still get butterflies 🦋",
 
-"You are my safe place 🌙",
+"You are my peace 🌙",
 
-"You are my peace 💖",
+"You make life magical 💖",
 
 "I love your smile ❤️",
 
-"You make my life complete ✨"
+"You are my forever ✨"
 
 ];
 
-function showLove(){
+function showLove(event){
 
 let random=
 messages[Math.floor(Math.random()*messages.length)];
@@ -508,11 +630,13 @@ document
 .getElementById("note")
 .innerHTML=random;
 
+createHearts(event);
+
 }
 
 /* LOVE METER */
 
-function startMeter(){
+function startMeter(event){
 
 let percent=
 document.getElementById("percent");
@@ -544,41 +668,52 @@ clearInterval(interval);
 
 },25);
 
-}
-
-/* LETTERS */
-
-function openLetter(type){
-
-let text="";
-
-if(type==="sad"){
-
-text=
-"Whenever you're sad, remember that you never have to face anything alone. I'll always be here for you ❤️";
+createHearts(event);
 
 }
 
-if(type==="miss"){
+/* FLOATING HEARTS */
 
-text=
-"If you're missing me right now, just know I'm probably missing you even more ❤️";
+for(let i=0;i<25;i++){
+
+let heart=document.createElement('div');
+
+heart.classList.add('heart');
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=
+(Math.random()*5+5)+"s";
+
+document.body.appendChild(heart);
 
 }
 
-if(type==="happy"){
+/* CLICK HEARTS */
 
-text=
-"Seeing you happy is honestly one of my favorite things in the world ✨";
+function createHearts(event){
+
+for(let i=0;i<12;i++){
+
+let heart=document.createElement("div");
+
+heart.classList.add("click-heart");
+
+heart.innerHTML="❤️";
+
+heart.style.left=
+event.clientX + (Math.random()*100-50) + "px";
+
+heart.style.top=
+event.clientY + (Math.random()*100-50) + "px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},1000);
 
 }
-
-let box=
-document.getElementById("letterBox");
-
-box.style.display="block";
-
-box.innerHTML=text;
 
 }
 
