@@ -17,8 +17,12 @@ box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
-background:linear-gradient(135deg,#0f0f0f,#1a1a1a);
+background:linear-gradient(135deg,#0f0f0f,#1c1c1c);
 color:white;
 overflow-x:hidden;
 }
@@ -40,9 +44,10 @@ justify-content:center;
 align-items:center;
 flex-direction:column;
 
+text-align:center;
+
 z-index:9999;
 
-text-align:center;
 padding:20px;
 }
 
@@ -54,6 +59,8 @@ margin-bottom:20px;
 .intro p{
 font-size:22px;
 margin-bottom:30px;
+max-width:700px;
+line-height:1.7;
 }
 
 /* BUTTON */
@@ -68,6 +75,7 @@ background:#ff4d6d;
 color:white;
 
 font-size:18px;
+font-weight:600;
 
 cursor:pointer;
 
@@ -97,7 +105,8 @@ align-items:center;
 flex-direction:column;
 
 text-align:center;
-padding:20px;
+
+padding:40px 20px;
 }
 
 .hero img{
@@ -125,17 +134,24 @@ margin-bottom:20px;
 }
 
 .hero p{
-max-width:700px;
+max-width:750px;
 font-size:22px;
 line-height:1.8;
 }
 
-/* LETTER */
+/* SECTIONS */
 
-.letter-section{
+section{
 padding:100px 20px;
 text-align:center;
 }
+
+.section-title{
+font-size:50px;
+margin-bottom:50px;
+}
+
+/* ENVELOPE */
 
 .envelope{
 width:220px;
@@ -147,9 +163,9 @@ margin:40px auto;
 
 position:relative;
 
-cursor:pointer;
+border-radius:12px;
 
-border-radius:10px;
+cursor:pointer;
 
 transition:0.5s;
 }
@@ -174,14 +190,18 @@ border-right:110px solid transparent;
 border-top:80px solid #ff758f;
 }
 
+/* LETTER */
+
 .letter{
-max-width:800px;
+max-width:850px;
+
+width:90%;
 
 margin:40px auto;
 
 background:#1f1f1f;
 
-padding:50px;
+padding:45px;
 
 border-radius:30px;
 
@@ -191,10 +211,44 @@ font-size:22px;
 
 display:none;
 
-animation:fadeIn 2s ease;
+animation:fadeIn 1.5s ease;
+
+box-shadow:0 0 30px rgba(255,77,109,0.2);
 }
 
-/* NOTES */
+/* QUESTIONS */
+
+.question-buttons{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+margin-bottom:40px;
+}
+
+.message-box{
+max-width:850px;
+
+width:90%;
+
+margin:auto;
+
+background:#1f1f1f;
+
+padding:40px;
+
+border-radius:25px;
+
+line-height:2;
+
+font-size:22px;
+
+display:none;
+
+animation:fadeIn 1s ease;
+}
+
+/* LOVE NOTES */
 
 .note-box{
 max-width:700px;
@@ -214,14 +268,11 @@ min-height:150px;
 display:flex;
 justify-content:center;
 align-items:center;
+
+box-shadow:0 0 20px rgba(255,77,109,0.2);
 }
 
 /* LOVE METER */
-
-.meter-section{
-padding:100px 20px;
-text-align:center;
-}
 
 .meter{
 width:280px;
@@ -248,9 +299,9 @@ box-shadow:0 0 30px rgba(255,77,109,0.4);
 width:210px;
 height:210px;
 
-border-radius:50%;
-
 background:#111;
+
+border-radius:50%;
 
 display:flex;
 justify-content:center;
@@ -263,19 +314,14 @@ font-weight:bold;
 
 /* FINAL */
 
-.final{
-padding:100px 20px;
-text-align:center;
-}
-
 .final p{
-max-width:700px;
+max-width:750px;
 margin:auto;
 line-height:1.8;
 font-size:24px;
 }
 
-/* HEARTS */
+/* FLOATING HEARTS */
 
 .heart{
 position:fixed;
@@ -325,24 +371,12 @@ position:fixed;
 
 font-size:24px;
 
-animation:heartPop 1s linear forwards;
-
 pointer-events:none;
+
+animation:heartPop 1s linear forwards;
 }
 
 /* ANIMATIONS */
-
-@keyframes float{
-
-0%{
-transform:translateY(100vh) rotate(45deg);
-}
-
-100%{
-transform:translateY(-120vh) rotate(45deg);
-}
-
-}
 
 @keyframes fadeIn{
 
@@ -370,6 +404,18 @@ opacity:1;
 
 }
 
+@keyframes float{
+
+0%{
+transform:translateY(100vh) rotate(45deg);
+}
+
+100%{
+transform:translateY(-120vh) rotate(45deg);
+}
+
+}
+
 @keyframes heartPop{
 
 0%{
@@ -390,7 +436,12 @@ transform:translateY(-100px) scale(2);
 
 .intro h1,
 .hero h1{
-font-size:40px;
+font-size:42px;
+}
+
+.intro p,
+.hero p{
+font-size:18px;
 }
 
 .hero img{
@@ -398,10 +449,32 @@ width:220px;
 height:220px;
 }
 
-.hero p,
+.section-title{
+font-size:34px;
+}
+
 .letter,
+.message-box,
+.note-box,
 .final p{
 font-size:18px;
+padding:25px;
+}
+
+.btn{
+font-size:16px;
+padding:12px 24px;
+}
+
+.meter{
+width:220px;
+height:220px;
+}
+
+.inner{
+width:170px;
+height:170px;
+font-size:35px;
 }
 
 }
@@ -422,9 +495,7 @@ I made something special for you ✨
 </p>
 
 <button class="btn" onclick="openWebsite(event)">
-
 Open Your Surprise 💌
-
 </button>
 
 </div>
@@ -437,29 +508,27 @@ Open Your Surprise 💌
 
 <section class="hero">
 
-<img src="Love.jpg" id="lovePhoto">
+<img src="love.jpg" id="lovePhoto">
 
 <h1>365 Days With You ❤️</h1>
 
 <p>
-Thank you for being the best part of my life ✨
+Thank you for being the most beautiful part of my life.
+Every moment with you feels magical ✨
 </p>
 
 </section>
 
 <!-- LETTER -->
 
-<section class="letter-section">
+<section>
 
-<h1 style="font-size:50px;">
-
+<h1 class="section-title">
 Open Your Letter 💌
-
 </h1>
 
 <div class="envelope"
 onclick="openLetter(event)">
-
 </div>
 
 <div class="letter" id="letter">
@@ -468,26 +537,58 @@ My Love,
 
 <br><br>
 
-This year with you has honestly been the most beautiful part of my life.
+This year with you has honestly been the happiest chapter of my life.
 
 Every laugh,
+every memory,
 every late-night conversation,
-every little memory,
-every moment with you —
-means everything to me.
+every little moment with you —
+means more to me than words can explain.
 
-You make my life happier,
+You make ordinary days feel special.
+You make life feel lighter,
 warmer,
-and brighter just by existing.
+and beautiful.
 
 Thank you for loving me,
 supporting me,
-and being my favorite person.
+understanding me,
+and being my favorite person in the world ❤️
 
-No matter where life takes us,
-I’ll always choose you ❤️
+No matter what happens,
+I’ll always choose you.
 
-Forever yours ✨
+Again and again.
+
+Forever ✨
+
+</div>
+
+</section>
+
+<!-- QUESTIONS -->
+
+<section>
+
+<h1 class="section-title">
+Open When... ❤️
+</h1>
+
+<div class="question-buttons">
+
+<button class="btn"
+onclick="showMessage('problems',event)">
+What To Do When You Have Problems? 🌙
+</button>
+
+<button class="btn"
+onclick="showMessage('miss',event)">
+What To Do If You Miss Me? ❤️
+</button>
+
+</div>
+
+<div class="message-box" id="messageBox">
 
 </div>
 
@@ -497,39 +598,27 @@ Forever yours ✨
 
 <section>
 
-<h1 style="font-size:50px;text-align:center;">
-
+<h1 class="section-title">
 Reasons I Love You ❤️
-
 </h1>
 
 <div class="note-box" id="note">
-
 Click below for a surprise ✨
-
 </div>
-
-<div style="text-align:center;">
 
 <button class="btn"
 onclick="showLove(event)">
-
 Reveal Love 💖
-
 </button>
-
-</div>
 
 </section>
 
 <!-- LOVE METER -->
 
-<section class="meter-section">
+<section>
 
-<h1 style="font-size:50px;">
-
+<h1 class="section-title">
 Love Meter 💘
-
 </h1>
 
 <div class="meter" id="meter">
@@ -546,9 +635,7 @@ Love Meter 💘
 
 <button class="btn"
 onclick="startMeter(event)">
-
 Check Our Love ❤️
-
 </button>
 
 </section>
@@ -557,18 +644,14 @@ Check Our Love ❤️
 
 <section class="final">
 
-<h1 style="font-size:50px;margin-bottom:30px;">
-
+<h1 class="section-title">
 Forever With You 🌙
-
 </h1>
 
 <p>
-
 Thank you for every smile,
 every memory,
 and every beautiful moment together ❤️
-
 </p>
 
 </section>
@@ -596,6 +679,81 @@ createHearts(event);
 function openLetter(event){
 
 document.getElementById("letter").style.display="block";
+
+createHearts(event);
+
+}
+
+/* QUESTIONS */
+
+function showMessage(type,event){
+
+let text="";
+
+if(type==="problems"){
+
+text=`
+<h2 style="color:#ff4d6d;margin-bottom:20px;">
+When You Have Problems 🌙
+</h2>
+
+<p>
+Hey love,
+
+Whenever life feels heavy,
+please remember you never have to face things alone.
+
+No matter what happens,
+you can always come to me.
+
+Talk to me,
+cry to me,
+rant to me,
+or simply sit quietly with me ❤️
+
+We’re a team.
+And I’ll always stand beside you.
+
+You are stronger than you think,
+and I’ll always believe in you ✨
+</p>
+`;
+
+}
+
+if(type==="miss"){
+
+text=`
+<h2 style="color:#ff4d6d;margin-bottom:20px;">
+When You Miss Me ❤️
+</h2>
+
+<p>
+If you're missing me right now,
+just know I’m probably missing you too.
+
+I miss your smile,
+your laugh,
+your voice,
+and every little thing about you.
+
+Whenever you miss me,
+come back to this page and remember:
+
+You are deeply loved ❤️
+
+No matter where we are,
+my heart will always find its way back to you ✨
+</p>
+`;
+
+}
+
+let box=document.getElementById("messageBox");
+
+box.style.display="block";
+
+box.innerHTML=text;
 
 createHearts(event);
 
